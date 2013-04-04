@@ -17,6 +17,7 @@ void testApp::setup(){
     panel.addPanel("Day of the Year");
     panel.addSlider("Day", 1, 1, 365, true);
     ofEnableAlphaBlending();
+    ofBackground(0);
 }
 
 //--------------------------------------------------------------
