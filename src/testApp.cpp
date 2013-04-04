@@ -41,7 +41,7 @@ void testApp::draw(){
         videoImg.drawSubsection(i, 160, player.getWidth()/365, player.getHeight(), curSlice*(player.getWidth()/365), 0);
     }
     
-    line.setup(ofVec2f(player.getWidth()/2, player.getHeight()/2));
+    line.setup(ofVec2f(player.getWidth()/2, player.getHeight()/2), videoImg);
     line.walk();
     line.render();
 }
