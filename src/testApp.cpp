@@ -8,9 +8,8 @@ void testApp::setup(){
     else    {
         ofBackground(255);
         ofEnableAlphaBlending();
-        //player.setLoopState(OF_LOOP_NONE);
         player.setVolume(0);
-        //player.play();  //move this to draw()
+        //player.play();
         videoImg.allocate(player.getWidth(), player.getHeight(), player.getPixelsRef().getImageType());
     }
     panel.setup(1280,150);
