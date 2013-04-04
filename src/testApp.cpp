@@ -9,7 +9,7 @@ void testApp::setup(){
         ofBackground(255);
         ofEnableAlphaBlending();
         player.setVolume(0);
-        //player.play();
+        player.play();
         videoImg.allocate(player.getWidth(), player.getHeight(), player.getPixelsRef().getImageType());
     }
     panel.setup(1280,150);
@@ -17,6 +17,8 @@ void testApp::setup(){
     panel.addSlider("Day", 1, 1, 365, true);
     ofEnableAlphaBlending();
     ofBackground(0);
+    
+    line.setup(ofVec2f(player.getWidth()/2, player.getHeight()/2), videoImg);
 }
 
 //--------------------------------------------------------------
@@ -31,17 +33,17 @@ void testApp::update(){
         }
         videoImg.reloadTexture();
     }
+    
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
     curSlice = panel.getValueI("Day");
-    player.play();
+    //player.play();
     for (int i = 0; i < player.getWidth(); i++) {
         videoImg.drawSubsection(i, 160, player.getWidth()/365, player.getHeight(), curSlice*(player.getWidth()/365), 0);
     }
     
-    line.setup(ofVec2f(player.getWidth()/2, player.getHeight()/2), videoImg);
     line.walk();
     line.render();
 }
